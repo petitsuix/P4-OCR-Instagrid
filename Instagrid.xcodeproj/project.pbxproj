@@ -15,6 +15,7 @@
 		978C08A12587AB7900C30474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978C089F2587AB7900C30474 /* LaunchScreen.storyboard */; };
 		978C08AC2587AB7A00C30474 /* InstagridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08AB2587AB7A00C30474 /* InstagridTests.swift */; };
 		978C08B72587AB7B00C30474 /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08B62587AB7B00C30474 /* InstagridUITests.swift */; };
+		978C08CE2587AE0000C30474 /* InstagridSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08CD2587AE0000C30474 /* InstagridSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		978C08B22587AB7A00C30474 /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		978C08B62587AB7B00C30474 /* InstagridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITests.swift; sourceTree = "<group>"; };
 		978C08B82587AB7B00C30474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		978C08C82587AC8800C30474 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		978C08C92587AC9000C30474 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		978C08CD2587AE0000C30474 /* InstagridSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				978C08932587AB7100C30474 /* Instagrid */,
+				978C08CA2587ACAB00C30474 /* Model */,
+				978C08CB2587ACB100C30474 /* View */,
+				978C08CC2587ACB500C30474 /* Controller */,
 				978C08AA2587AB7A00C30474 /* InstagridTests */,
 				978C08B52587AB7A00C30474 /* InstagridUITests */,
 				978C08922587AB7100C30474 /* Products */,
@@ -99,13 +106,14 @@
 		978C08932587AB7100C30474 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				978C08A22587AB7900C30474 /* Info.plist */,
+				978C08C72587AC3C00C30474 /* Supporting files */,
 				978C08942587AB7100C30474 /* AppDelegate.swift */,
+				978C08C82587AC8800C30474 /* ThirstySoftRegular.otf */,
+				978C08C92587AC9000C30474 /* Delm-Medium.otf */,
 				978C08962587AB7100C30474 /* SceneDelegate.swift */,
-				978C08982587AB7100C30474 /* ViewController.swift */,
-				978C089A2587AB7100C30474 /* Main.storyboard */,
 				978C089D2587AB7900C30474 /* Assets.xcassets */,
 				978C089F2587AB7900C30474 /* LaunchScreen.storyboard */,
-				978C08A22587AB7900C30474 /* Info.plist */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
@@ -126,6 +134,37 @@
 				978C08B82587AB7B00C30474 /* Info.plist */,
 			);
 			path = InstagridUITests;
+			sourceTree = "<group>";
+		};
+		978C08C72587AC3C00C30474 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		978C08CA2587ACAB00C30474 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				978C08CD2587AE0000C30474 /* InstagridSession.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		978C08CB2587ACB100C30474 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				978C089A2587AB7100C30474 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978C08CC2587ACB500C30474 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				978C08982587AB7100C30474 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +299,7 @@
 			files = (
 				978C08992587AB7100C30474 /* ViewController.swift in Sources */,
 				978C08952587AB7100C30474 /* AppDelegate.swift in Sources */,
+				978C08CE2587AE0000C30474 /* InstagridSession.swift in Sources */,
 				978C08972587AB7100C30474 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
