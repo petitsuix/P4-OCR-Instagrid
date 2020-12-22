@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="landscape" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,11 +17,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-aP-5ub">
-                                <rect key="frame" x="157" y="5" width="164" height="80"/>
+                                <rect key="frame" x="113" y="49.000000000000007" width="202" height="98.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="BPl-ME-07G"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="O1A-qF-TDz"/>
@@ -43,95 +43,11 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-hM-1he">
-                                <rect key="frame" x="709" y="41" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="aUg-dk-wtL"/>
-                                    <constraint firstAttribute="width" constant="75" id="fgv-Qq-T6m"/>
-                                    <constraint firstAttribute="height" constant="75" id="hzy-aZ-1oB"/>
-                                    <constraint firstAttribute="width" constant="75" id="ovl-Nn-PuH"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="aUg-dk-wtL"/>
-                                        <exclude reference="fgv-Qq-T6m"/>
-                                        <exclude reference="hzy-aZ-1oB"/>
-                                        <exclude reference="ovl-Nn-PuH"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="aUg-dk-wtL"/>
-                                        <include reference="fgv-Qq-T6m"/>
-                                        <exclude reference="hzy-aZ-1oB"/>
-                                        <exclude reference="ovl-Nn-PuH"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="hTg-8W-p1e">
-                                <rect key="frame" x="709" y="274" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="6eu-Yl-mrp"/>
-                                    <constraint firstAttribute="width" constant="75" id="afp-9D-TAG"/>
-                                    <constraint firstAttribute="height" constant="75" id="dAp-jD-BoW"/>
-                                    <constraint firstAttribute="width" constant="75" id="ysz-Li-hUc"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6eu-Yl-mrp"/>
-                                        <exclude reference="afp-9D-TAG"/>
-                                        <exclude reference="dAp-jD-BoW"/>
-                                        <exclude reference="ysz-Li-hUc"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6eu-Yl-mrp"/>
-                                        <exclude reference="afp-9D-TAG"/>
-                                        <exclude reference="dAp-jD-BoW"/>
-                                        <include reference="ysz-Li-hUc"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="5hw-xz-JVx">
-                                <rect key="frame" x="709" y="157.66666666666666" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="3qw-K5-bEm"/>
-                                    <constraint firstAttribute="width" constant="75" id="A8p-R5-iGt"/>
-                                    <constraint firstAttribute="width" constant="75" id="LCA-a0-JWT"/>
-                                    <constraint firstAttribute="width" constant="75" id="crJ-QU-lgY"/>
-                                    <constraint firstAttribute="height" constant="75" id="ggd-Gj-2dv"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="lz5-wY-Bdl"/>
-                                    <constraint firstAttribute="height" constant="75" id="vHg-Ub-6BD"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3qw-K5-bEm"/>
-                                        <exclude reference="A8p-R5-iGt"/>
-                                        <exclude reference="LCA-a0-JWT"/>
-                                        <exclude reference="crJ-QU-lgY"/>
-                                        <exclude reference="ggd-Gj-2dv"/>
-                                        <exclude reference="lz5-wY-Bdl"/>
-                                        <exclude reference="vHg-Ub-6BD"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="3qw-K5-bEm"/>
-                                        <exclude reference="A8p-R5-iGt"/>
-                                        <include reference="LCA-a0-JWT"/>
-                                        <exclude reference="crJ-QU-lgY"/>
-                                        <exclude reference="ggd-Gj-2dv"/>
-                                        <exclude reference="lz5-wY-Bdl"/>
-                                        <exclude reference="vHg-Ub-6BD"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnG-cC-PuP">
-                                <rect key="frame" x="138" y="19" width="202" height="84"/>
+                                <rect key="frame" x="94" y="252" width="240" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
-                                        <rect key="frame" x="91" y="20" width="20" height="20"/>
+                                        <rect key="frame" x="110" y="20" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Pg3-ks-uOw" secondAttribute="height" multiplier="1:1" id="4c6-o3-ITs"/>
                                             <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
@@ -139,7 +55,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
-                                        <rect key="frame" x="-35.333333333333329" y="34.333333333333336" width="273" height="42.000000000000007"/>
+                                        <rect key="frame" x="-16.333333333333329" y="50.333333333333314" width="273" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yKL-H8-VHP" secondAttribute="height" multiplier="13:2" id="dU7-x9-yy2"/>
                                         </constraints>
@@ -161,7 +77,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-mj-Fau" userLabel="View Displayed Photos">
-                                <rect key="frame" x="85" y="132" width="308" height="308"/>
+                                <rect key="frame" x="60" y="381" width="308" height="308"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-D1-7mw">
                                         <rect key="frame" x="6" y="158" width="296" height="143"/>
@@ -255,16 +171,16 @@
                                 </variation>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="SV Layouts">
-                                <rect key="frame" x="85.666666666666686" y="469" width="307" height="65"/>
+                                <rect key="frame" x="41.666666666666657" y="718" width="345" height="73"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="65" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="6VG-ys-lQe">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="73"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="65" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="O9D-7U-PtQ">
-                                        <rect key="frame" x="121" y="0.0" width="65" height="65"/>
+                                        <rect key="frame" x="133.66666666666669" y="0.0" width="77.666666666666686" height="73"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="65" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="Jv8-x2-zRb">
-                                        <rect key="frame" x="242" y="0.0" width="65" height="65"/>
+                                        <rect key="frame" x="267.33333333333331" y="0.0" width="77.666666666666686" height="73"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
