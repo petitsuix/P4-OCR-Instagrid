@@ -241,47 +241,39 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PCa-P2-ogG" userLabel="SV Portrait Swipe Up">
-                                <rect key="frame" x="75" y="251.33333333333334" width="278" height="100.66666666666666"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnG-cC-PuP">
+                                <rect key="frame" x="94" y="252" width="240" height="100"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnG-cC-PuP">
-                                        <rect key="frame" x="19" y="0.0" width="240" height="100.66666666666667"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
-                                                <rect key="frame" x="110" y="19.999999999999972" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Pg3-ks-uOw" secondAttribute="height" multiplier="1:1" id="4c6-o3-ITs"/>
-                                                    <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
-                                                    <constraint firstAttribute="height" constant="20" id="nff-kH-xty"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
-                                                <rect key="frame" x="-16.333333333333329" y="50.999999999999972" width="273" height="42"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="yKL-H8-VHP" secondAttribute="height" multiplier="13:2" id="dU7-x9-yy2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
-                                                <state key="normal" title="Swipe up to share">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
+                                        <rect key="frame" x="110" y="20" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="yKL-H8-VHP" secondAttribute="bottom" constant="7.6699999999999999" id="G46-IH-H5r"/>
-                                            <constraint firstItem="yKL-H8-VHP" firstAttribute="centerX" secondItem="TnG-cC-PuP" secondAttribute="centerX" id="JBy-dk-cXr"/>
-                                            <constraint firstItem="Pg3-ks-uOw" firstAttribute="centerX" secondItem="TnG-cC-PuP" secondAttribute="centerX" id="Y1p-db-93L"/>
-                                            <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="aoa-03-fKw"/>
-                                            <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="p1S-ah-Llc"/>
-                                            <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="xdH-EB-bWG"/>
+                                            <constraint firstAttribute="width" secondItem="Pg3-ks-uOw" secondAttribute="height" multiplier="1:1" id="4c6-o3-ITs"/>
+                                            <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
+                                            <constraint firstAttribute="height" constant="20" id="nff-kH-xty"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
+                                        <rect key="frame" x="-16.333333333333329" y="50.333333333333314" width="273" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yKL-H8-VHP" secondAttribute="height" multiplier="13:2" id="dU7-x9-yy2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
+                                        <state key="normal" title="Swipe up to share">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="PCa-P2-ogG" secondAttribute="height" multiplier="80:29" id="Tqu-rO-K8X"/>
-                                    <constraint firstAttribute="width" secondItem="PCa-P2-ogG" secondAttribute="height" multiplier="80:29" id="bfi-m2-Hbn"/>
+                                    <constraint firstAttribute="width" secondItem="TnG-cC-PuP" secondAttribute="height" multiplier="12:5" id="6ed-d6-Geo"/>
+                                    <constraint firstAttribute="bottom" secondItem="yKL-H8-VHP" secondAttribute="bottom" constant="7.6699999999999999" id="G46-IH-H5r"/>
+                                    <constraint firstItem="yKL-H8-VHP" firstAttribute="centerX" secondItem="TnG-cC-PuP" secondAttribute="centerX" id="JBy-dk-cXr"/>
+                                    <constraint firstItem="Pg3-ks-uOw" firstAttribute="centerX" secondItem="TnG-cC-PuP" secondAttribute="centerX" id="Y1p-db-93L"/>
+                                    <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="aoa-03-fKw"/>
+                                    <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="p1S-ah-Llc"/>
+                                    <constraint firstItem="Pg3-ks-uOw" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="top" constant="20" id="xdH-EB-bWG"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-mj-Fau" userLabel="View Displayed Photos">
                                 <rect key="frame" x="60" y="381" width="308" height="308"/>
                                 <subviews>
@@ -376,7 +368,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="SV Layouts">
                                 <rect key="frame" x="41.666666666666657" y="718" width="345" height="73"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="65" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="6VG-ys-lQe">
@@ -401,27 +393,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCa-P2-ogG" secondAttribute="trailing" constant="75" id="1gf-04-iYr"/>
-                            <constraint firstItem="OPJ-mj-Fau" firstAttribute="top" secondItem="PCa-P2-ogG" secondAttribute="bottom" constant="29" id="4yl-ud-fQM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VaQ-Yy-z2v" secondAttribute="bottom" constant="20" id="9PN-Rd-Clc"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="EiG-CG-yew"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pMg-aP-5ub" secondAttribute="trailing" constant="113" id="G9t-js-D1Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TnG-cC-PuP" secondAttribute="trailing" constant="94" id="HoQ-pZ-bSC"/>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="72" id="Jto-fP-Vd1"/>
                             <constraint firstItem="VaQ-Yy-z2v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="L5m-sH-KRv"/>
+                            <constraint firstItem="TnG-cC-PuP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="aW8-0j-EH0"/>
                             <constraint firstItem="pbI-4D-FLT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41.5" id="asx-7A-52L"/>
                             <constraint firstItem="pbI-4D-FLT" firstAttribute="top" secondItem="OPJ-mj-Fau" secondAttribute="bottom" constant="29" id="c5H-GO-191"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="d6l-ha-h8I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pbI-4D-FLT" secondAttribute="trailing" constant="41.5" id="izO-60-JRc"/>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ns5-3h-OTe"/>
-                            <constraint firstItem="PCa-P2-ogG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="yy5-Iq-ZYj"/>
+                            <constraint firstItem="OPJ-mj-Fau" firstAttribute="top" secondItem="TnG-cC-PuP" secondAttribute="bottom" constant="29" id="oLp-w8-U8a"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="VaQ-Yy-z2v"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9PN-Rd-Clc"/>
                                 <exclude reference="L5m-sH-KRv"/>
+                                <exclude reference="9PN-Rd-Clc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -429,8 +421,8 @@
                                 <include reference="VaQ-Yy-z2v"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9PN-Rd-Clc"/>
                                 <include reference="L5m-sH-KRv"/>
+                                <include reference="9PN-Rd-Clc"/>
                             </mask>
                         </variation>
                     </view>
