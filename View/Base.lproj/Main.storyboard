@@ -117,41 +117,18 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-bD-jRb" userLabel="Swipe Up">
-                                <rect key="frame" x="119" y="41" width="200" height="320"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-bD-jRb" userLabel="Swipe Up">
+                                <rect key="frame" x="142" y="180.66666666666666" width="161" height="61"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
-                                        <rect key="frame" x="88" y="0.0" width="24" height="24"/>
+                                        <rect key="frame" x="70.666666666666657" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
-                                            <constraint firstAttribute="width" constant="25" id="Jag-If-8Ku">
-                                                <variation key="heightClass=compact" constant="24"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="25" id="aSV-xc-G4z">
-                                                <variation key="heightClass=compact" constant="24"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" secondItem="Pg3-ks-uOw" secondAttribute="height" multiplier="4:3" id="hce-nL-rFR"/>
                                             <constraint firstAttribute="height" constant="20" id="nff-kH-xty"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="Jag-If-8Ku"/>
-                                                <exclude reference="aSV-xc-G4z"/>
-                                                <exclude reference="hce-nL-rFR"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="HdL-nV-cEJ"/>
-                                                <include reference="Jag-If-8Ku"/>
-                                                <include reference="aSV-xc-G4z"/>
-                                                <exclude reference="hce-nL-rFR"/>
-                                                <exclude reference="nff-kH-xty"/>
-                                            </mask>
-                                        </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
-                                        <rect key="frame" x="0.0" y="24" width="200" height="296"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
+                                        <rect key="frame" x="0.0" y="20" width="161" height="41"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                         <state key="normal" title="Swipe up to share">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,6 +143,12 @@
                                         <variation key="heightClass=compact" constant="200"/>
                                     </constraint>
                                 </constraints>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="MQ8-Eb-WRT"/>
+                                        <exclude reference="ZLY-ha-zZS"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -184,8 +167,11 @@
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="HAb-gF-lUn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pMg-aP-5ub" secondAttribute="trailing" constant="113" id="Itw-No-BXC"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMN-mV-jpo"/>
+                            <constraint firstItem="ppp-bD-jRb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="16.170000000000002" id="OSB-Nb-Yrb">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="top" secondItem="ppp-bD-jRb" secondAttribute="bottom" constant="8" id="OfJ-cH-jbC">
-                                <variation key="heightClass=compact" constant="-300"/>
+                                <variation key="heightClass=compact" constant="-181"/>
                             </constraint>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Orx-AS-0Ne"/>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PQv-kI-foT"/>
@@ -200,19 +186,22 @@
                                 <variation key="heightClass=compact" constant="25"/>
                             </constraint>
                             <constraint firstItem="ppp-bD-jRb" firstAttribute="centerX" secondItem="OPJ-mj-Fau" secondAttribute="centerX" id="fL3-8M-uNB">
-                                <variation key="heightClass=compact" constant="-258"/>
+                                <variation key="heightClass=compact" constant="-256"/>
                             </constraint>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="centerX" secondItem="OPJ-mj-Fau" secondAttribute="centerX" id="i2f-Zn-FeP"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ktA-QO-w72"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="pH9-vC-3Mo"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rCv-Oa-1TB"/>
+                            <constraint firstItem="OPJ-mj-Fau" firstAttribute="leading" secondItem="ppp-bD-jRb" secondAttribute="trailing" constant="24" id="zu9-Mg-hee"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="OSB-Nb-Yrb"/>
                                 <exclude reference="fL3-8M-uNB"/>
                                 <exclude reference="2DT-bU-ggt"/>
                                 <exclude reference="Ddw-qF-cZ1"/>
                                 <exclude reference="Orx-AS-0Ne"/>
+                                <exclude reference="zu9-Mg-hee"/>
                                 <exclude reference="BTN-4X-Ns6"/>
                                 <exclude reference="HAb-gF-lUn"/>
                                 <exclude reference="MMN-mV-jpo"/>
@@ -231,11 +220,14 @@
                             <mask key="constraints">
                                 <exclude reference="Itw-No-BXC"/>
                                 <exclude reference="9vk-zg-jfd"/>
-                                <include reference="fL3-8M-uNB"/>
+                                <include reference="OSB-Nb-Yrb"/>
+                                <exclude reference="fL3-8M-uNB"/>
                                 <include reference="2DT-bU-ggt"/>
                                 <exclude reference="Ddw-qF-cZ1"/>
+                                <exclude reference="OfJ-cH-jbC"/>
                                 <exclude reference="Orx-AS-0Ne"/>
                                 <exclude reference="PQv-kI-foT"/>
+                                <include reference="zu9-Mg-hee"/>
                                 <exclude reference="BTN-4X-Ns6"/>
                                 <include reference="HAb-gF-lUn"/>
                                 <exclude reference="MMN-mV-jpo"/>
