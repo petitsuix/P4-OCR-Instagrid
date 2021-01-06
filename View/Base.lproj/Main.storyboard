@@ -52,6 +52,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQi-Pn-n9R"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzD-5I-sPs" userLabel="Button top right">
                                                         <rect key="frame" x="142" y="0.0" width="126" height="126"/>
@@ -91,20 +94,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="Layouts">
                                 <rect key="frame" x="55" y="596" width="280" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htL-JI-rO2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htL-JI-rO2" userLabel="Layout button 1">
                                         <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="didTapLayoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PQA-OQ-Mb5"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-km-LcV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-km-LcV" userLabel="Layout button 2">
                                         <rect key="frame" x="101.33333333333334" y="0.0" width="77.333333333333343" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="didTapLayoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCi-a5-oOF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-M7-qJO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-M7-qJO" userLabel="Layout button 3">
                                         <rect key="frame" x="202.66666666666669" y="0.0" width="77.333333333333314" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="didTapLayoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7G-ir-bpO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -122,6 +137,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
                                         <rect key="frame" x="70.333333333333329" y="0.0" width="20" height="20"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
                                             <constraint firstAttribute="height" constant="20" id="nff-kH-xty"/>
@@ -129,16 +145,19 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKL-H8-VHP">
                                         <rect key="frame" x="0.0" y="20" width="161" height="41"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                         <state key="normal" title="Swipe up to share">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="138" id="2DT-bU-ggt">
                                 <variation key="heightClass=compact" constant="-173"/>
@@ -229,6 +248,19 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="bottomLeftGridViewButton" destination="TnI-af-bfV" id="RuU-dc-G6h"/>
+                        <outlet property="bottomRightGridViewButton" destination="MqD-sV-SEz" id="mhE-hd-i5Z"/>
+                        <outlet property="holderGridView" destination="OPJ-mj-Fau" id="obj-2C-b9T"/>
+                        <outlet property="topLeftGridViewButton" destination="n5e-tx-sFt" id="At7-9o-apx"/>
+                        <outlet property="topRightViewButton" destination="SzD-5I-sPs" id="wux-4k-bm3"/>
+                        <outletCollection property="layoutButtons" destination="htL-JI-rO2" collectionClass="NSMutableArray" id="Bfq-sD-7uS"/>
+                        <outletCollection property="layoutButtons" destination="y0y-km-LcV" collectionClass="NSMutableArray" id="zdh-Zj-ah6"/>
+                        <outletCollection property="layoutButtons" destination="wIa-M7-qJO" collectionClass="NSMutableArray" id="0fm-Zs-VLO"/>
+                        <outletCollection property="topGridViewButtons" destination="n5e-tx-sFt" collectionClass="NSMutableArray" id="9tu-ze-IQf"/>
+                        <outletCollection property="topGridViewButtons" destination="SzD-5I-sPs" collectionClass="NSMutableArray" id="zlm-m9-MRa"/>
+                        <outletCollection property="bottomGridViewButtons" destination="MqD-sV-SEz" collectionClass="NSMutableArray" id="vRE-iy-K9Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,6 +273,7 @@
         <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
         <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
         <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
-        <image name="Plus" width="13.333333015441895" height="13.333333015441895"/>
+        <image name="Plus" width="40" height="40"/>
+        <image name="Selected" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>
