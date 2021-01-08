@@ -10,13 +10,14 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var holderGridView: UIView!
+
     @IBOutlet weak var topLeftGridViewButton: UIButton!
-    @IBOutlet weak var topRightViewButton: UIButton!
+    @IBOutlet weak var topRightGridViewButton: UIButton!
     @IBOutlet weak var bottomLeftGridViewButton: UIButton!
     @IBOutlet weak var bottomRightGridViewButton: UIButton!
     
     @IBOutlet var layoutButtons: [UIButton]!
+    @IBOutlet var gridButtons: [UIButton]!
     
     
     override func viewDidLoad() {
@@ -33,13 +34,25 @@ class ViewController: UIViewController {
             button.isSelected = false
         }
         sender.isSelected = true
+        
+        if sender == layoutButtons[0] {
+            bottomRightGridViewButton.isHidden = false
+            topRightGridViewButton.isHidden = true
+        } else if sender == layoutButtons[1] {
+            topRightGridViewButton.isHidden = false
+            bottomRightGridViewButton.isHidden = true
+        } else {
+            topRightGridViewButton.isHidden = false
+            bottomRightGridViewButton.isHidden = false
+        }
     }
     
     @IBAction func didTapGridButton(_ sender: UIButton) {
         // Quand touché, ouvre le menu pour séléctionner une image
         // Choisir une image
         // Adapter au bouton
-        // remplacer l'image + par l'aimage choisie
+        // remplacer l'image "+" par l'image choisie
+        
     }
     
     func swipeToShare() {

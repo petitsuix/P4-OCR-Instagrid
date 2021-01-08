@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,11 +17,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-aP-5ub" userLabel="Instagrid logo">
-                                <rect key="frame" x="113" y="44" width="164" height="80"/>
+                                <rect key="frame" x="395" y="8" width="164" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="BPl-ME-07G">
                                         <variation key="heightClass=compact" constant="53"/>
@@ -40,7 +40,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-mj-Fau" userLabel="Grid View">
-                                <rect key="frame" x="45" y="272" width="300" height="300"/>
+                                <rect key="frame" x="327" y="61" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bGp-CY-IwC" userLabel="Grid Stack View">
                                         <rect key="frame" x="16" y="16" width="268" height="268"/>
@@ -53,13 +53,16 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <connections>
-                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQi-Pn-n9R"/>
+                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u52-tl-NgF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzD-5I-sPs" userLabel="Button top right">
                                                         <rect key="frame" x="142" y="0.0" width="126" height="126"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qb0-bh-k5A"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -70,11 +73,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HKf-ey-YlI"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqD-sV-SEz" userLabel="Button bottom right">
                                                         <rect key="frame" x="142" y="0.0" width="126" height="126"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="didTapGridButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ek2-E3-2NS"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -91,11 +100,11 @@
                                     <constraint firstAttribute="trailing" secondItem="bGp-CY-IwC" secondAttribute="trailing" constant="16" id="dRO-CE-FHQ"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="Layouts">
-                                <rect key="frame" x="55" y="596" width="280" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="Layouts">
+                                <rect key="frame" x="651" y="75" width="80" height="272"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htL-JI-rO2" userLabel="Layout button 1">
-                                        <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <state key="selected" image="Selected"/>
@@ -104,7 +113,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-km-LcV" userLabel="Layout button 2">
-                                        <rect key="frame" x="101.33333333333334" y="0.0" width="77.333333333333343" height="80"/>
+                                        <rect key="frame" x="0.0" y="96" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected"/>
@@ -113,7 +122,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-M7-qJO" userLabel="Layout button 3">
-                                        <rect key="frame" x="202.66666666666669" y="0.0" width="77.333333333333314" height="80"/>
+                                        <rect key="frame" x="0.0" y="192" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <state key="selected" image="Selected"/>
@@ -123,20 +132,20 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="OZV-SI-66d">
+                                    <constraint firstAttribute="width" constant="272" id="OZV-SI-66d">
                                         <variation key="heightClass=compact" constant="80"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="80" id="tPu-li-Pgc">
-                                        <variation key="heightClass=compact" constant="280"/>
+                                        <variation key="heightClass=compact" constant="272"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-bD-jRb" userLabel="Swipe Up">
-                                <rect key="frame" x="114.66666666666669" y="203" width="161" height="61"/>
+                                <rect key="frame" x="142" y="180.66666666666666" width="161" height="61"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
-                                        <rect key="frame" x="70.333333333333329" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="70.666666666666657" y="0.0" width="20" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
@@ -188,7 +197,7 @@
                                 <variation key="heightClass=compact" constant="16"/>
                             </constraint>
                             <constraint firstItem="pbI-4D-FLT" firstAttribute="leading" secondItem="OPJ-mj-Fau" secondAttribute="trailing" constant="85" id="Xhx-1T-hLe">
-                                <variation key="heightClass=compact" constant="25"/>
+                                <variation key="heightClass=compact" constant="24"/>
                             </constraint>
                             <constraint firstItem="ppp-bD-jRb" firstAttribute="centerX" secondItem="OPJ-mj-Fau" secondAttribute="centerX" id="fL3-8M-uNB">
                                 <variation key="heightClass=compact" constant="-256"/>
@@ -251,20 +260,20 @@
                     <connections>
                         <outlet property="bottomLeftGridViewButton" destination="TnI-af-bfV" id="RuU-dc-G6h"/>
                         <outlet property="bottomRightGridViewButton" destination="MqD-sV-SEz" id="mhE-hd-i5Z"/>
-                        <outlet property="holderGridView" destination="OPJ-mj-Fau" id="obj-2C-b9T"/>
                         <outlet property="topLeftGridViewButton" destination="n5e-tx-sFt" id="At7-9o-apx"/>
-                        <outlet property="topRightViewButton" destination="SzD-5I-sPs" id="wux-4k-bm3"/>
+                        <outlet property="topRightGridViewButton" destination="SzD-5I-sPs" id="5MN-or-dhO"/>
                         <outletCollection property="layoutButtons" destination="htL-JI-rO2" collectionClass="NSMutableArray" id="Bfq-sD-7uS"/>
                         <outletCollection property="layoutButtons" destination="y0y-km-LcV" collectionClass="NSMutableArray" id="zdh-Zj-ah6"/>
                         <outletCollection property="layoutButtons" destination="wIa-M7-qJO" collectionClass="NSMutableArray" id="0fm-Zs-VLO"/>
-                        <outletCollection property="topGridViewButtons" destination="n5e-tx-sFt" collectionClass="NSMutableArray" id="9tu-ze-IQf"/>
-                        <outletCollection property="topGridViewButtons" destination="SzD-5I-sPs" collectionClass="NSMutableArray" id="zlm-m9-MRa"/>
-                        <outletCollection property="bottomGridViewButtons" destination="MqD-sV-SEz" collectionClass="NSMutableArray" id="vRE-iy-K9Z"/>
+                        <outletCollection property="gridButtons" destination="n5e-tx-sFt" collectionClass="NSMutableArray" id="Pdh-IO-YJv"/>
+                        <outletCollection property="gridButtons" destination="SzD-5I-sPs" collectionClass="NSMutableArray" id="u6t-l4-hAc"/>
+                        <outletCollection property="gridButtons" destination="TnI-af-bfV" collectionClass="NSMutableArray" id="Rup-XL-I1r"/>
+                        <outletCollection property="gridButtons" destination="MqD-sV-SEz" collectionClass="NSMutableArray" id="GzE-Jc-xfR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.64928909952607" y="84.615384615384613"/>
+            <point key="canvasLocation" x="132.22748815165878" y="83.07692307692308"/>
         </scene>
     </scenes>
     <resources>
