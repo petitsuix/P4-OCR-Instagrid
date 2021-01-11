@@ -7,18 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     
 
-    @IBOutlet weak var topLeftGridViewButton: UIButton!
-    @IBOutlet weak var topRightGridViewButton: UIButton!
-    @IBOutlet weak var bottomLeftGridViewButton: UIButton!
-    @IBOutlet weak var bottomRightGridViewButton: UIButton!
     
     @IBOutlet var layoutButtons: [UIButton]!
     @IBOutlet var gridButtons: [UIButton]!
-    
+
+    var pictureButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,23 +33,27 @@ class ViewController: UIViewController {
         sender.isSelected = true
         
         if sender == layoutButtons[0] {
-            bottomRightGridViewButton.isHidden = false
-            topRightGridViewButton.isHidden = true
+            gridButtons[3].isHidden = false
+            gridButtons[0].isHidden = true
         } else if sender == layoutButtons[1] {
-            topRightGridViewButton.isHidden = false
-            bottomRightGridViewButton.isHidden = true
+            gridButtons[0].isHidden = false
+            gridButtons[3].isHidden = true
         } else {
-            topRightGridViewButton.isHidden = false
-            bottomRightGridViewButton.isHidden = false
+            gridButtons[0].isHidden = false
+            gridButtons[3].isHidden = false
         }
     }
     
     @IBAction func didTapGridButton(_ sender: UIButton) {
+        pictureButton = sender
+        let imagePicker = UIImagePickerController()
         // Quand touché, ouvre le menu pour séléctionner une image
         // Choisir une image
         // Adapter au bouton
         // remplacer l'image "+" par l'image choisie
-        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func swipeToShare() {
@@ -63,5 +64,22 @@ class ViewController: UIViewController {
         // remettre en ordre lorsque on a fini
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true) { [weak self] in
+        if let image = info[.originalImage] as? UIImage {
+            self?.pictureButton?.setImage(image, for: .normal)
+            self?.pictureButton?.imageView?.contentMode = .scaleAspectFill
+    }
+}
 }
 
+/* extension ViewController: UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
+        // Récupérer des infos sur ce que l'on a pris
+        if let pictureEdited = info[UIImagePickerController.InfoKey.editedImage] {
+            imageHolder.image = pictureEdited
+        }
+    }
+} */
+
+}
