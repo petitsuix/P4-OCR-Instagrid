@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
     var pictureButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -56,7 +57,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func swipeToShare() {
+
+    @IBAction func swipeUpGesture(_ sender: UISwipeGestureRecognizer) {
+        print("Vous avez swipé")
+    }
+    
+    func didSwipeToShare() {
         // SI on a les cadres images remplies :
         // Animation pour faire disparaitre grid view
         // activer le share
