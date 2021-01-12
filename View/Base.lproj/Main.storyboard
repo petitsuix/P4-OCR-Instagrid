@@ -99,6 +99,9 @@
                                     <constraint firstItem="bGp-CY-IwC" firstAttribute="top" secondItem="OPJ-mj-Fau" secondAttribute="top" constant="16" id="IS5-gQ-dC1"/>
                                     <constraint firstAttribute="trailing" secondItem="bGp-CY-IwC" secondAttribute="trailing" constant="16" id="dRO-CE-FHQ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tV9-Cq-oWO" appends="YES" id="zPk-eF-6Rm"/>
+                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="Layouts">
                                 <rect key="frame" x="59" y="596" width="272" height="80"/>
@@ -160,9 +163,6 @@
                                     </label>
                                 </subviews>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="MRl-ef-f23" appends="YES" id="JiS-AK-zBD"/>
-                                </connections>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -259,6 +259,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="gridView" destination="OPJ-mj-Fau" id="jju-Mr-0Uc"/>
                         <outletCollection property="layoutButtons" destination="htL-JI-rO2" collectionClass="NSMutableArray" id="Bfq-sD-7uS"/>
                         <outletCollection property="layoutButtons" destination="y0y-km-LcV" collectionClass="NSMutableArray" id="zdh-Zj-ah6"/>
                         <outletCollection property="layoutButtons" destination="wIa-M7-qJO" collectionClass="NSMutableArray" id="0fm-Zs-VLO"/>
@@ -269,9 +270,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="MRl-ef-f23">
+                <swipeGestureRecognizer direction="up" id="tV9-Cq-oWO">
                     <connections>
-                        <action selector="swipeUpGesture:" destination="BYZ-38-t0r" id="0Qt-aS-aeV"/>
+                        <action selector="swipeUpGesture:" destination="BYZ-38-t0r" id="0gu-1M-dk5"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

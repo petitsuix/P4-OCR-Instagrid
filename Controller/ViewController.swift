@@ -8,13 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-
     
-
     
+    
+    
+    @IBOutlet weak var gridView: UIView!
     @IBOutlet var layoutButtons: [UIButton]!
     @IBOutlet var gridButtons: [UIButton]!
-
+    
     var pictureButton: UIButton!
     
     
@@ -22,12 +23,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func didTapLayoutButton(_ sender: UIButton) {
         
-    // Déselectionner tous les boutons
-    // Selectionner le bouton actuel
-    // Mettre à jour la main grid view avec le style correspondant au bouton séléctionné
+        // Déselectionner tous les boutons
+        // Selectionner le bouton actuel
+        // Mettre à jour la main grid view avec le style correspondant au bouton séléctionné
         for button in layoutButtons {
             button.isSelected = false
         }
@@ -57,9 +58,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         present(imagePicker, animated: true, completion: nil)
     }
     
-
+    func asImage() -> UIImage {
+        UIGraphicsBeginImageContext(gridView.frame.size)
+        gridView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetCurrentContext()
+        UIGraphicsEndImageContext()
+        return UIImage(cgImage: image!.makeImage()!)
+    }
+    
     @IBAction func swipeUpGesture(_ sender: UISwipeGestureRecognizer) {
-        print("Vous avez swipé")
+        if sender.state == .ended {
+            print("You swiped up")
+            
+            
+            let image = asImage()
+            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+            
+            if let popoverController = activityViewController.popoverPresentationController {
+                popoverController.sourceView = self.view
+                popoverController.sourceRect = self.view.bounds
+            }
+            present(activityViewController, animated: true, completion: nil)
+            
+            
+        }
     }
     
     func didSwipeToShare() {
@@ -72,20 +94,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) { [weak self] in
-        if let image = info[.originalImage] as? UIImage {
-            self?.pictureButton?.setImage(image, for: .normal)
-            self?.pictureButton?.imageView?.contentMode = .scaleAspectFill
-    }
-}
-}
-
-/* extension ViewController: UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
-        // Récupérer des infos sur ce que l'on a pris
-        if let pictureEdited = info[UIImagePickerController.InfoKey.editedImage] {
-            imageHolder.image = pictureEdited
+            if let image = info[.originalImage] as? UIImage {
+                self?.pictureButton?.setImage(image, for: .normal)
+                self?.pictureButton?.imageView?.contentMode = .scaleAspectFill
+            }
         }
     }
-} */
-
+    
+    /* extension ViewController: UINavigationControllerDelegate {
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
+     // Récupérer des infos sur ce que l'on a pris
+     if let pictureEdited = info[UIImagePickerController.InfoKey.editedImage] {
+     imageHolder.image = pictureEdited
+     }
+     }
+     } */
+    
 }
