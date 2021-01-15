@@ -9,23 +9,32 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    
-    
-    
     @IBOutlet weak var gridView: UIView!
     @IBOutlet var layoutButtons: [UIButton]!
     @IBOutlet var gridButtons: [UIButton]!
+    private var pictureButton: UIButton!
     
-    var pictureButton: UIButton!
-    
+    private func asImage(from view: UIView) -> UIImage {
+        UIGraphicsBeginImageContext(view.frame.size)
+        // sécuriser :
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        layoutButtons[2].isSelected = true
+    }
+    
+    func hideGridButtons(topLeft: Bool, bottomRight: Bool) {
+        gridButtons[0].isHidden = topLeft
+        gridButtons[3].isHidden = bottomRight
     }
     
     @IBAction func didTapLayoutButton(_ sender: UIButton) {
-        
         // Déselectionner tous les boutons
         // Selectionner le bouton actuel
         // Mettre à jour la main grid view avec le style correspondant au bouton séléctionné
@@ -35,14 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         sender.isSelected = true
         
         if sender == layoutButtons[0] {
-            gridButtons[3].isHidden = false
-            gridButtons[0].isHidden = true
+            hideGridButtons(topLeft: true, bottomRight: false)
         } else if sender == layoutButtons[1] {
-            gridButtons[0].isHidden = false
-            gridButtons[3].isHidden = true
+            hideGridButtons(topLeft: false, bottomRight: true)
         } else {
-            gridButtons[0].isHidden = false
-            gridButtons[3].isHidden = false
+            hideGridButtons(topLeft: false, bottomRight: false)
         }
     }
     
@@ -58,29 +64,46 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func asImage() -> UIImage {
-        UIGraphicsBeginImageContext(gridView.frame.size)
-        gridView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetCurrentContext()
-        UIGraphicsEndImageContext()
-        return UIImage(cgImage: image!.makeImage()!)
+    func gridAnimation(x: CGFloat, y: CGFloat) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+            self.gridView?.transform = CGAffineTransform(translationX: x, y: y)
+        })
     }
     
-    @IBAction func swipeUpGesture(_ sender: UISwipeGestureRecognizer) {
-        if sender.state == .ended {
-            print("You swiped up")
-            
-            
-            let image = asImage()
+    private func openShareController(sender: UIGestureRecognizer) {
+        if sender.state == .ended { // utiliser un switch sur le state
+            let image = asImage(from: gridView) // guard let pour sécuriser car asImage est optionnel
             let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            
+            activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+                if completed {
+                    self.gridAnimation(x: 0, y: 0)
+                } else {
+                    self.gridAnimation(x: 0, y: 0)
+                }
+            }
             if let popoverController = activityViewController.popoverPresentationController {
                 popoverController.sourceView = self.view
                 popoverController.sourceRect = self.view.bounds
             }
             present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
+        
+        switch sender.direction { // CGAffineTransform -> UIView.animate
+        case .up :
+            if UIDevice.current.orientation == UIDeviceOrientation.portrait {
+                self.gridAnimation(x: 0, y: -900)
+                openShareController(sender: sender)
+            }
             
-            
+        case .left :
+            if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft || UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
+                self.gridAnimation(x: -900, y: 0)
+                openShareController(sender: sender)
+            }
+        default : break
         }
     }
     
@@ -100,14 +123,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
             }
         }
     }
-    
-    /* extension ViewController: UINavigationControllerDelegate {
-     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
-     // Récupérer des infos sur ce que l'on a pris
-     if let pictureEdited = info[UIImagePickerController.InfoKey.editedImage] {
-     imageHolder.image = pictureEdited
-     }
-     }
-     } */
-    
 }

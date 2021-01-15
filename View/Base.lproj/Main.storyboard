@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Delm-Medium.otf">
-            <string>Delm-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-aP-5ub" userLabel="Instagrid logo">
-                                <rect key="frame" x="113" y="44" width="164" height="80"/>
+                                <rect key="frame" x="399" y="8" width="156" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="BPl-ME-07G">
-                                        <variation key="heightClass=compact" constant="53"/>
+                                        <variation key="heightClass=compact" constant="40"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="164" id="ZpN-O4-LK3"/>
+                                    <constraint firstAttribute="width" constant="164" id="ZpN-O4-LK3">
+                                        <variation key="heightClass=compact" constant="156"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -40,7 +37,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-mj-Fau" userLabel="Grid View">
-                                <rect key="frame" x="45" y="272" width="300" height="300"/>
+                                <rect key="frame" x="327" y="61" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bGp-CY-IwC" userLabel="Grid Stack View">
                                         <rect key="frame" x="16" y="16" width="268" height="268"/>
@@ -101,10 +98,11 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="tV9-Cq-oWO" appends="YES" id="zPk-eF-6Rm"/>
+                                    <outletCollection property="gestureRecognizers" destination="F3B-CO-Wca" appends="YES" id="sGa-do-QVh"/>
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-4D-FLT" userLabel="Layouts">
-                                <rect key="frame" x="59" y="596" width="272" height="80"/>
+                                <rect key="frame" x="651" y="75" width="80" height="272"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htL-JI-rO2" userLabel="Layout button 1">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -116,7 +114,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-km-LcV" userLabel="Layout button 2">
-                                        <rect key="frame" x="96" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="96" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected"/>
@@ -125,7 +123,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-M7-qJO" userLabel="Layout button 3">
-                                        <rect key="frame" x="192" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="192" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <state key="selected" image="Selected"/>
@@ -144,22 +142,41 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-bD-jRb" userLabel="Swipe Up">
-                                <rect key="frame" x="121" y="201.33333333333334" width="148" height="62.666666666666657"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-bD-jRb" userLabel="Swipe to share">
+                                <rect key="frame" x="174.33333333333337" y="181" width="144.66666666666663" height="60.333333333333343"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-ks-uOw">
-                                        <rect key="frame" x="64" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="62.333333333333314" y="0.0" width="20" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="HdL-nV-cEJ"/>
                                             <constraint firstAttribute="height" constant="20" id="nff-kH-xty"/>
                                         </constraints>
+                                        <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-hI-Pci">
-                                        <rect key="frame" x="0.0" y="36" width="148" height="26.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-hI-Pci">
+                                        <rect key="frame" x="0.0" y="36" width="144.66666666666666" height="24.333333333333329"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Swipe up to share">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="24" name="Delm-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact">
+                                            <attributedString key="attributedText">
+                                                <fragment content="Swipe left to share">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="22" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -194,6 +211,7 @@
                             <constraint firstItem="pbI-4D-FLT" firstAttribute="top" secondItem="OPJ-mj-Fau" secondAttribute="bottom" constant="24" id="TIh-Pl-Z21">
                                 <variation key="heightClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="ppp-bD-jRb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ujw-6e-ewf"/>
                             <constraint firstItem="OPJ-mj-Fau" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XQK-RM-Set">
                                 <variation key="heightClass=compact" constant="16"/>
                             </constraint>
@@ -207,22 +225,25 @@
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ktA-QO-w72"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="pH9-vC-3Mo"/>
                             <constraint firstItem="pMg-aP-5ub" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rCv-Oa-1TB"/>
-                            <constraint firstItem="OPJ-mj-Fau" firstAttribute="leading" secondItem="ppp-bD-jRb" secondAttribute="trailing" constant="24" id="zu9-Mg-hee"/>
+                            <constraint firstItem="OPJ-mj-Fau" firstAttribute="leading" secondItem="ppp-bD-jRb" secondAttribute="trailing" constant="24" id="zu9-Mg-hee">
+                                <variation key="heightClass=compact" constant="8"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="OSB-Nb-Yrb"/>
+                                <exclude reference="Ujw-6e-ewf"/>
+                                <exclude reference="fL3-8M-uNB"/>
+                                <exclude reference="2DT-bU-ggt"/>
+                                <exclude reference="Ddw-qF-cZ1"/>
+                                <exclude reference="Orx-AS-0Ne"/>
+                                <exclude reference="zu9-Mg-hee"/>
                                 <exclude reference="BTN-4X-Ns6"/>
                                 <exclude reference="HAb-gF-lUn"/>
                                 <exclude reference="MMN-mV-jpo"/>
                                 <exclude reference="QvL-B9-tJp"/>
                                 <exclude reference="i2f-Zn-FeP"/>
                                 <exclude reference="ktA-QO-w72"/>
-                                <exclude reference="OSB-Nb-Yrb"/>
-                                <exclude reference="fL3-8M-uNB"/>
-                                <exclude reference="2DT-bU-ggt"/>
-                                <exclude reference="Ddw-qF-cZ1"/>
-                                <exclude reference="Orx-AS-0Ne"/>
-                                <exclude reference="zu9-Mg-hee"/>
                                 <exclude reference="7zb-mC-X8A"/>
                                 <exclude reference="Xhx-1T-hLe"/>
                             </mask>
@@ -234,6 +255,16 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Itw-No-BXC"/>
+                                <include reference="OSB-Nb-Yrb"/>
+                                <exclude reference="Szs-Kf-Fse"/>
+                                <include reference="Ujw-6e-ewf"/>
+                                <exclude reference="fL3-8M-uNB"/>
+                                <include reference="2DT-bU-ggt"/>
+                                <exclude reference="Ddw-qF-cZ1"/>
+                                <exclude reference="OfJ-cH-jbC"/>
+                                <exclude reference="Orx-AS-0Ne"/>
+                                <exclude reference="PQv-kI-foT"/>
+                                <include reference="zu9-Mg-hee"/>
                                 <exclude reference="BTN-4X-Ns6"/>
                                 <include reference="HAb-gF-lUn"/>
                                 <exclude reference="MMN-mV-jpo"/>
@@ -242,15 +273,6 @@
                                 <exclude reference="ktA-QO-w72"/>
                                 <exclude reference="pH9-vC-3Mo"/>
                                 <exclude reference="rCv-Oa-1TB"/>
-                                <include reference="OSB-Nb-Yrb"/>
-                                <exclude reference="Szs-Kf-Fse"/>
-                                <exclude reference="fL3-8M-uNB"/>
-                                <include reference="2DT-bU-ggt"/>
-                                <exclude reference="Ddw-qF-cZ1"/>
-                                <exclude reference="OfJ-cH-jbC"/>
-                                <exclude reference="Orx-AS-0Ne"/>
-                                <exclude reference="PQv-kI-foT"/>
-                                <include reference="zu9-Mg-hee"/>
                                 <exclude reference="5tb-Qj-Pyk"/>
                                 <include reference="7zb-mC-X8A"/>
                                 <exclude reference="TIh-Pl-Z21"/>
@@ -270,9 +292,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="tV9-Cq-oWO">
+                <swipeGestureRecognizer direction="up" id="tV9-Cq-oWO" userLabel="Swipe UP Gesture Recognizer">
                     <connections>
-                        <action selector="swipeUpGesture:" destination="BYZ-38-t0r" id="0gu-1M-dk5"/>
+                        <action selector="swipeGesture:" destination="BYZ-38-t0r" id="0gu-1M-dk5"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="F3B-CO-Wca" userLabel="Swipe LEFT Gesture Recognizer">
+                    <connections>
+                        <action selector="swipeGesture:" destination="BYZ-38-t0r" id="X0k-FR-aNq"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -280,6 +307,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow Left" width="3.3333332538604736" height="4.6666665077209473"/>
         <image name="Arrow Up" width="4.6666665077209473" height="3.3333332538604736"/>
         <image name="Instagrid" width="41.333332061767578" height="13"/>
         <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
