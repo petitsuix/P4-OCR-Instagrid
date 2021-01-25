@@ -6,7 +6,6 @@
 //
 
 // TODO: police swipe left
-// Checker l'image pixelisée instagrid (assets, ratio...)
 // Faire en sorte que l'on puisse pas share tant que toutes les images sont pas remplies
 // remettre la grid vierge quand le share est terminé
 // Retravailler l'architecture du projet, savoir la décrire, citer et montrer le MVC du projet pour la soutenance (prendre screenshots)
@@ -18,7 +17,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     // MARK: - Outlet properties
-
+    
     @IBOutlet weak var gridView: UIView!
     @IBOutlet var layoutButtons: [UIButton]!
     @IBOutlet var gridButtons: [UIButton]!
@@ -26,7 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     // MARK: - Simple properties
     
-    private var pictureButton: UIButton!
+    private var tappedGridButton: UIButton!
     
     
     // MARK: - Methods
@@ -35,12 +34,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         // Do any additional setup after loading the view.
         layoutButtons[2].isSelected = true
     }
-   
+    
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) { [weak self] in
             if let image = info[.originalImage] as? UIImage {
-                self?.pictureButton?.setImage(image, for: .normal)
-                self?.pictureButton?.imageView?.contentMode = .scaleAspectFill
+                self?.tappedGridButton?.setImage(image, for: .normal)
+                self?.tappedGridButton?.imageView?.contentMode = .scaleAspectFill
             }
         }
     }
@@ -68,22 +67,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     
     private func openShareController(sender: UIGestureRecognizer) {
-        if sender.state == .ended { // utiliser un switch sur le state
-            let image = gridViewAsImage(from: gridView) // guard let pour sécuriser car asImage est optionnel
-            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
-                if completed {
-                    self.gridViewAnimation(x: 0, y: 0)
-                    // Nettoyer
-                } else {
-                    self.gridViewAnimation(x: 0, y: 0)
+        
+        if tappedGridButton != nil {
+            
+            if let image = gridViewAsImage(from: gridView) {
+                
+                let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                
+                activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
+                    if completed {
+                        self.gridViewAnimation(x: 0, y: 0)
+                        // Nettoyer la grid et la remettre vierge
+                    } else {
+                        self.gridViewAnimation(x: 0, y: 0)
+                    }
                 }
-            } // se débarasser de popover
-            if let popoverController = activityViewController.popoverPresentationController {
-                popoverController.sourceView = self.view
-                popoverController.sourceRect = self.view.bounds
+                present(activityViewController, animated: true)
+            } else {
+                print("Image has no value")
             }
-            present(activityViewController, animated: true)
+        } else {
+            print("tappedGridButton has no value")
+            self.gridViewAnimation(x: 0, y: 0)
         }
     }
     
@@ -105,7 +110,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     @IBAction func didTapGridButton(_ sender: UIButton) {
-        pictureButton = sender // Changer le nom
+        tappedGridButton = sender
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
@@ -114,11 +119,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
         
+        //        let plusImage = #imageLiteral(resourceName: "Plus")
+        
         switch sender.direction {
         case .up :
             if UIDevice.current.orientation == UIDeviceOrientation.portrait {
                 self.gridViewAnimation(x: 0, y: -900)
+                //                for button in gridButtons {
+                //                    if button.currentImage == plusImage {
+                //                        print("Some frames are still empty")
+                //                    } else {
                 openShareController(sender: sender)
+                //                    }
+                //                    break
+                //                }
             }
         case .left :
             if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft || UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Instagrid.png",
+      "filename" : "instagrid-hd@1x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Instagrid@2x.png",
+      "filename" : "instagrid-hd@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Instagrid@3x.png",
+      "filename" : "instagrid-hd@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
