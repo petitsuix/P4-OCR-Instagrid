@@ -228,6 +228,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="BTN-4X-Ns6"/>
+                                <exclude reference="HAb-gF-lUn"/>
+                                <exclude reference="MMN-mV-jpo"/>
+                                <exclude reference="QvL-B9-tJp"/>
+                                <exclude reference="i2f-Zn-FeP"/>
+                                <exclude reference="ktA-QO-w72"/>
                                 <exclude reference="OSB-Nb-Yrb"/>
                                 <exclude reference="Ujw-6e-ewf"/>
                                 <exclude reference="fL3-8M-uNB"/>
@@ -235,12 +241,6 @@
                                 <exclude reference="Ddw-qF-cZ1"/>
                                 <exclude reference="Orx-AS-0Ne"/>
                                 <exclude reference="zu9-Mg-hee"/>
-                                <exclude reference="BTN-4X-Ns6"/>
-                                <exclude reference="HAb-gF-lUn"/>
-                                <exclude reference="MMN-mV-jpo"/>
-                                <exclude reference="QvL-B9-tJp"/>
-                                <exclude reference="i2f-Zn-FeP"/>
-                                <exclude reference="ktA-QO-w72"/>
                                 <exclude reference="7zb-mC-X8A"/>
                                 <exclude reference="Xhx-1T-hLe"/>
                             </mask>
@@ -252,6 +252,14 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Itw-No-BXC"/>
+                                <exclude reference="BTN-4X-Ns6"/>
+                                <include reference="HAb-gF-lUn"/>
+                                <exclude reference="MMN-mV-jpo"/>
+                                <exclude reference="QvL-B9-tJp"/>
+                                <include reference="i2f-Zn-FeP"/>
+                                <exclude reference="ktA-QO-w72"/>
+                                <exclude reference="pH9-vC-3Mo"/>
+                                <exclude reference="rCv-Oa-1TB"/>
                                 <include reference="OSB-Nb-Yrb"/>
                                 <exclude reference="Szs-Kf-Fse"/>
                                 <include reference="Ujw-6e-ewf"/>
@@ -262,14 +270,6 @@
                                 <exclude reference="Orx-AS-0Ne"/>
                                 <exclude reference="PQv-kI-foT"/>
                                 <include reference="zu9-Mg-hee"/>
-                                <exclude reference="BTN-4X-Ns6"/>
-                                <include reference="HAb-gF-lUn"/>
-                                <exclude reference="MMN-mV-jpo"/>
-                                <exclude reference="QvL-B9-tJp"/>
-                                <include reference="i2f-Zn-FeP"/>
-                                <exclude reference="ktA-QO-w72"/>
-                                <exclude reference="pH9-vC-3Mo"/>
-                                <exclude reference="rCv-Oa-1TB"/>
                                 <exclude reference="5tb-Qj-Pyk"/>
                                 <include reference="7zb-mC-X8A"/>
                                 <exclude reference="TIh-Pl-Z21"/>
