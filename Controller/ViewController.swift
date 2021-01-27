@@ -5,7 +5,7 @@
 //  Created by Richardier on 14/12/2020.
 //
 
-// TODO: police swipe left
+// TODO:
 // Faire en sorte que l'on puisse pas share tant que toutes les images sont pas remplies
 // remettre la grid vierge quand le share est terminé
 // Retravailler l'architecture du projet, savoir la décrire, citer et montrer le MVC du projet pour la soutenance (prendre screenshots)
@@ -15,6 +15,9 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    
+    // MARK: - Change grid layout
     
     // MARK: - Outlet properties
     
@@ -77,7 +80,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                 activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
                     if completed {
                         self.gridViewAnimation(x: 0, y: 0)
-                        // Nettoyer la grid et la remettre vierge
+                        for button in self.gridButtons {
+                            button.setImage(UIImage(named: "Plus"), for: .normal)
+                        }
                     } else {
                         self.gridViewAnimation(x: 0, y: 0)
                     }
