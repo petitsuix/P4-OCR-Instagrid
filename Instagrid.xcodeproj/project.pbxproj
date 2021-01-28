@@ -11,7 +11,7 @@
 		972268BD25C06C2F00E1FB00 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 978C08C92587AC9000C30474 /* Delm-Medium.otf */; };
 		978C08952587AB7100C30474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08942587AB7100C30474 /* AppDelegate.swift */; };
 		978C08972587AB7100C30474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08962587AB7100C30474 /* SceneDelegate.swift */; };
-		978C08992587AB7100C30474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08982587AB7100C30474 /* ViewController.swift */; };
+		978C08992587AB7100C30474 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C08982587AB7100C30474 /* GridViewController.swift */; };
 		978C089C2587AB7100C30474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978C089A2587AB7100C30474 /* Main.storyboard */; };
 		978C089E2587AB7900C30474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 978C089D2587AB7900C30474 /* Assets.xcassets */; };
 		978C08A12587AB7900C30474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978C089F2587AB7900C30474 /* LaunchScreen.storyboard */; };
@@ -41,7 +41,7 @@
 		978C08912587AB7100C30474 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978C08942587AB7100C30474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		978C08962587AB7100C30474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		978C08982587AB7100C30474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		978C08982587AB7100C30474 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		978C089B2587AB7100C30474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		978C089D2587AB7900C30474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		978C08A02587AB7900C30474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		978C08CC2587ACB500C30474 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				978C08982587AB7100C30474 /* ViewController.swift */,
+				978C08982587AB7100C30474 /* GridViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978C08992587AB7100C30474 /* ViewController.swift in Sources */,
+				978C08992587AB7100C30474 /* GridViewController.swift in Sources */,
 				978C08952587AB7100C30474 /* AppDelegate.swift in Sources */,
 				978C08CE2587AE0000C30474 /* InstagridSession.swift in Sources */,
 				978C08972587AB7100C30474 /* SceneDelegate.swift in Sources */,

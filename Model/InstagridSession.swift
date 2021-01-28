@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum HiddenGridButtons {
+    
+    case topLeftButtonHidden
+    
+    case bottomRightButtonHidden
+    
+    case noButtonHidden
+}
