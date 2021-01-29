@@ -15,17 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="rAY-J7-poS">
-                                <rect key="frame" x="132" y="316" width="150" height="104"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-mh-49g">
+                                <rect key="frame" x="117" y="328" width="180" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="fS1-So-2ai"/>
+                                    <constraint firstAttribute="height" constant="80" id="i9M-Rw-05l"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rAY-J7-poS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4kk-fg-AL3"/>
-                            <constraint firstItem="rAY-J7-poS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CyU-HW-fdU"/>
-                            <constraint firstItem="rAY-J7-poS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="vaF-2d-XUL"/>
-                            <constraint firstItem="rAY-J7-poS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="316" id="ykm-nT-cl7"/>
+                            <constraint firstItem="PMe-mh-49g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bc6-6R-K3v"/>
+                            <constraint firstItem="PMe-mh-49g" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rbb-e9-6Bh"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -35,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Instagrid" width="41.333332061767578" height="13"/>
+        <image name="Instagrid" width="2100" height="626.66668701171875"/>
     </resources>
 </document>

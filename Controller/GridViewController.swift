@@ -16,6 +16,10 @@ import UIKit
 
 class GridViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    // MARK: - Properties
+    
+    
+    
     // MARK: - View life cycle methods
     
     override func viewDidLoad() {
@@ -24,13 +28,14 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
         layoutButtons[2].isSelected = true
         
         for button in gridButtons {
-            button.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
-        }
+            button.setImage(UIImage(named: "Plus"), for: .normal)
+    }
     }
     
     // MARK: - Change grid layout
     
-    var gridViewState: HiddenGridButtons = .topLeftButtonHidden
+    
+    var gridViewState: HiddenGridButtons = .noButtonHidden
     
     func updateGridLayout() {
         switch gridViewState {
@@ -93,7 +98,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
         let selectedImage = info[.originalImage] as? UIImage
         for button in gridButtons where button == tappedGridButton {
             button.setImage(selectedImage, for: .normal)
-            button.imageView?.contentMode = .scaleAspectFill // Confirmer qu'on ait besoin de cette ligne
+            button.imageView?.contentMode = .scaleAspectFill
             tappedGridButton = nil
         }
         picker.dismiss(animated: true)
@@ -101,26 +106,19 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     // MARK: Share gridView
     
+    private var windowInterfaceOrientation: UIInterfaceOrientation? {
+        return UIApplication.shared.windows.first?.windowScene?.interfaceOrientation
+    }
+    
     @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
         
         switch sender.direction {
-        case .up :
-            if UIDevice.current.orientation == UIDeviceOrientation.portrait {
-                self.gridViewAnimation(x: 0, y: -900)
-                //                for button in gridButtons {
-                //                    if button.currentImage == plusImage {
-                //                        print("Some frames are still empty")
-                //                    } else {
-                openShareController(sender: sender)
-                //                    }
-                //                    break
-                //                }
-            }
-        case .left :
-            if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft || UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
-                self.gridViewAnimation(x: -900, y: 0)
-                openShareController(sender: sender)
-            }
+        case .up where windowInterfaceOrientation?.isPortrait == true :
+            self.gridViewAnimation(x: 0, y: -900)
+            openShareController(sender: sender)
+        case .left where windowInterfaceOrientation?.isLandscape == true :
+            self.gridViewAnimation(x: -900, y: 0)
+            openShareController(sender: sender)
         default :
             print("you swiped in the wrong direction")
             break
@@ -138,7 +136,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
     }
     
     private func gridViewAnimation(x: CGFloat, y: CGFloat) {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.gridView?.transform = CGAffineTransform(translationX: x, y: y)
         })
     }
@@ -159,41 +157,39 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
         let incompleteGridAlert = UIAlertController(title: "Grid is incomplete", message: "Some of your grid frames are still empty", preferredStyle: .alert)
         
         incompleteGridAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        if gridButtons[0].currentImage == UIImage(named: "Plus") || gridButtons[1].currentImage == UIImage(named: "Plus") || gridButtons[2].currentImage == UIImage(named: "Plus") || gridButtons[3].currentImage == UIImage(named: "Plus") {
+        //        if gridButtons[0].currentImage == UIImage(named: "Plus") || gridButtons[1].currentImage == UIImage(named: "Plus") || gridButtons[2].currentImage == UIImage(named: "Plus") || gridButtons[3].currentImage == UIImage(named: "Plus") {
         isGridIncomplete()
         if gridIsIncomplete == true {
             print("Grid is incomplete")
             self.gridViewAnimation(x: 0, y: 0)
             present(incompleteGridAlert, animated: true)
         } else {
-        
-                if let image = gridViewAsImage(from: gridView) {
-                    
-                    let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
-                    
-                    activityViewController.completionWithItemsHandler = { (nil, completed, _, error) in
-                        if completed { // créer func resetState
-                            self.gridViewAnimation(x: 0, y: 0)
-                            for button in self.gridButtons {
-                                button.setImage(UIImage(named: "Plus"), for: .normal)
-                            }
-                        } else {
-                            self.gridViewAnimation(x: 0, y: 0)
+            if let image = gridViewAsImage(from: gridView) {
+                
+                let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                
+                activityViewController.completionWithItemsHandler = { [self] (nil, completed, _, error) in
+                    if completed { // créer func resetState
+                        gridViewAnimation(x: 0, y: 0)
+                        for button in self.gridButtons {
+                            button.setImage(UIImage(named: "Plus"), for: .normal)
                         }
+                    } else {
+                        gridViewAnimation(x: 0, y: 0)
                     }
-                    present(activityViewController, animated: true)
-                } else {
-                    print("Image has no value")
                 }
+                present(activityViewController, animated: true)
+            } else {
+                print("Image has no value")
+            }
         }
     }
-
-
-//    func didSwipeToShare() {
-//        // Si on a les cadres images remplies :
-//        // Animation pour faire disparaitre grid view
-//        // activer le share
-//        // choisir l'objet de sharing
-//        // remettre en ordre lorsque on a fini
-
+    
+    //    func didSwipeToShare() {
+    //        // Si on a les cadres images remplies :
+    //        // Animation pour faire disparaitre grid view
+    //        // activer le share
+    //        // choisir l'objet de sharing
+    //        // remettre en ordre lorsque on a fini
+    
 }
