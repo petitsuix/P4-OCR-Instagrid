@@ -18,7 +18,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     // MARK: - Properties
     
-    
+    let plusImage = UIImage(named: "Plus")
     
     // MARK: - View life cycle methods
     
@@ -27,13 +27,13 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
         // Do any additional setup after loading the view.
         layoutButtons[2].isSelected = true
         
+        // 
         for button in gridButtons {
-            button.setImage(UIImage(named: "Plus"), for: .normal)
-    }
+            button.setImage(plusImage, for: .normal)
+        }
     }
     
     // MARK: - Change grid layout
-    
     
     var gridViewState: HiddenGridButtons = .noButtonHidden
     
@@ -146,7 +146,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
     private func isGridIncomplete() {
         gridIsIncomplete = false
         for button in gridButtons where button.isHidden == false {
-            if button.currentImage == UIImage(named: "Plus") {
+            if button.currentImage == plusImage {
                 gridIsIncomplete = true
             }
         }
@@ -155,9 +155,8 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
     private func openShareController(sender: UIGestureRecognizer) {
         
         let incompleteGridAlert = UIAlertController(title: "Grid is incomplete", message: "Some of your grid frames are still empty", preferredStyle: .alert)
-        
         incompleteGridAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        //        if gridButtons[0].currentImage == UIImage(named: "Plus") || gridButtons[1].currentImage == UIImage(named: "Plus") || gridButtons[2].currentImage == UIImage(named: "Plus") || gridButtons[3].currentImage == UIImage(named: "Plus") {
+        
         isGridIncomplete()
         if gridIsIncomplete == true {
             print("Grid is incomplete")
@@ -172,7 +171,7 @@ class GridViewController: UIViewController, UIImagePickerControllerDelegate & UI
                     if completed { // créer func resetState
                         gridViewAnimation(x: 0, y: 0)
                         for button in self.gridButtons {
-                            button.setImage(UIImage(named: "Plus"), for: .normal)
+                            button.setImage(plusImage, for: .normal)
                         }
                     } else {
                         gridViewAnimation(x: 0, y: 0)
