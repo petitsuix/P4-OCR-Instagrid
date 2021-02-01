@@ -43,7 +43,7 @@
 		978C08962587AB7100C30474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		978C08982587AB7100C30474 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		978C089B2587AB7100C30474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		978C089D2587AB7900C30474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		978C089D2587AB7900C30474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		978C08A02587AB7900C30474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		978C08A22587AB7900C30474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		978C08A72587AB7A00C30474 /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				978C08932587AB7100C30474 /* Instagrid */,
-				978C08CA2587ACAB00C30474 /* Model */,
-				978C08CB2587ACB100C30474 /* View */,
-				978C08CC2587ACB500C30474 /* Controller */,
 				978C08AA2587AB7A00C30474 /* InstagridTests */,
 				978C08B52587AB7A00C30474 /* InstagridUITests */,
 				978C08922587AB7100C30474 /* Products */,
@@ -108,14 +105,10 @@
 		978C08932587AB7100C30474 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				978C08A22587AB7900C30474 /* Info.plist */,
+				978C08CA2587ACAB00C30474 /* Model */,
+				978C08CB2587ACB100C30474 /* View */,
+				978C08CC2587ACB500C30474 /* Controller */,
 				978C08C72587AC3C00C30474 /* Supporting files */,
-				978C08942587AB7100C30474 /* AppDelegate.swift */,
-				978C08C82587AC8800C30474 /* ThirstySoftRegular.otf */,
-				978C08C92587AC9000C30474 /* Delm-Medium.otf */,
-				978C08962587AB7100C30474 /* SceneDelegate.swift */,
-				978C089D2587AB7900C30474 /* Assets.xcassets */,
-				978C089F2587AB7900C30474 /* LaunchScreen.storyboard */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
@@ -141,6 +134,13 @@
 		978C08C72587AC3C00C30474 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				978C08A22587AB7900C30474 /* Info.plist */,
+				978C08942587AB7100C30474 /* AppDelegate.swift */,
+				978C08C82587AC8800C30474 /* ThirstySoftRegular.otf */,
+				978C08C92587AC9000C30474 /* Delm-Medium.otf */,
+				978C08962587AB7100C30474 /* SceneDelegate.swift */,
+				978C089D2587AB7900C30474 /* Assets.xcassets */,
+				978C089F2587AB7900C30474 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4959W6459;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "Instagrid/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4959W6459;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "Instagrid/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
