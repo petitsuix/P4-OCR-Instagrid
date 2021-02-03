@@ -25,6 +25,7 @@ class GridViewController: UIViewController {
     
     // ⬇︎ Connecting to the main view.
     @IBOutlet weak var gridView: UIView!
+    
     // ⬇︎ Connecting to buttons inside gridView.
     @IBOutlet var gridButtons: [UIButton]!
     
@@ -40,14 +41,13 @@ class GridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         changeLayoutButtons[2].isSelected = true // Used so the "✔︎" image appears on the 3rd layout button, which is the default gridView state when app is launched
-        
         resetGridViewImages()
     }
     
     // MARK: - Change grid layout
     
     // ⬇︎ Hides/Shows designated buttons in gridView so its appearance conforms to the layout selected by the user.
-    func updateGridLayout() {
+    private func updateGridLayout() {
         switch gridViewState {
         case .bottomRightButtonHidden :
             gridButtons[0].isHidden = false
@@ -121,7 +121,6 @@ class GridViewController: UIViewController {
         let incompleteGridAlert = UIAlertController(title: "Grid is incomplete", message: "Some of your grid frames are still empty", preferredStyle: .alert)
         incompleteGridAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
-        // FIXME:
         if gridIsIncomplete() { // If grid is incomplete : no gridView animation, shows "incomplete grid" alert
             print("Grid is incomplete")
             animateGridView(x: 0, y: 0)
