@@ -21,7 +21,7 @@ class GridViewController: UIViewController {
     private var windowInterfaceOrientation: UIInterfaceOrientation? { return UIApplication.shared.windows.first?.windowScene?.interfaceOrientation }
     
     // ⬇︎ Connecting to the 3 layout buttons that allow the user to change gridView's appearance.
-    @IBOutlet var changeLayoutButtons: [UIButton]!
+    @IBOutlet var layoutButtons: [UIButton]!
     
     // ⬇︎ Connecting to the main view.
     @IBOutlet weak var gridView: UIView!
@@ -40,13 +40,13 @@ class GridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeLayoutButtons[2].isSelected = true // Used so the "✔︎" image appears on the 3rd layout button, which is the default gridView state when app is launched
+        layoutButtons[2].isSelected = true // Used so the "✔︎" image appears on the 3rd layout button, which is the default gridView state when app is launched
         resetGridViewImages()
     }
     
     // MARK: - Change grid layout
     
-    // ⬇︎ Hides/Shows designated buttons in gridView so its appearance conforms to the layout selected by the user.
+    // ⬇︎ Used to hide/show designated buttons in gridView depending on the case
     private func updateGridLayout() {
         switch gridViewState {
         case .bottomRightButtonHidden :
@@ -64,14 +64,14 @@ class GridViewController: UIViewController {
     }
     
     @IBAction func didTapLayoutButton(_ sender: UIButton) {
-        for button in changeLayoutButtons {
+        for button in layoutButtons {
             button.isSelected = false // unselects all buttons so the "✔︎" image disappears
         }
         sender.isSelected = true // only the button that was touched is set to selected so the "✔︎" image appears only where needed
         
-        if sender == changeLayoutButtons[0] {
+        if sender == layoutButtons[0] {
             gridViewState = .topLeftButtonHidden
-        } else if sender == changeLayoutButtons[1] {
+        } else if sender == layoutButtons[1] {
             gridViewState = .bottomRightButtonHidden
         } else {
             gridViewState = .noButtonHidden
@@ -90,6 +90,17 @@ class GridViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    // ⬇︎ Sets the image for the appriopriate grid button
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[.originalImage] as? UIImage
+        for button in gridButtons where button == tappedGridButton {
+            button.setImage(selectedImage, for: .normal)
+            button.imageView?.contentMode = .scaleAspectFill
+            tappedGridButton = nil // reset tappedGridButton
+        }
+        picker.dismiss(animated: true)
+    }
+    
     // MARK: - Share gridView
     
     private func animateGridView(x: CGFloat, y: CGFloat) {
@@ -98,7 +109,7 @@ class GridViewController: UIViewController {
         })
     }
     
-    // ⬇︎ Allows to return an image from a view so users can share it
+    // ⬇︎ Allows to return an image from the view so users can share it
     private func gridViewAsImage(from view: UIView) -> UIImage? {
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
@@ -162,15 +173,6 @@ class GridViewController: UIViewController {
 
 // MARK: - UIImagePickerController delegate
 
-// ⬇︎ Sets the image for the appriopriate grid button
+// ⬇︎ Allows the use of UIImagePickerController delegate
 extension GridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let selectedImage = info[.originalImage] as? UIImage
-        for button in gridButtons where button == tappedGridButton {
-            button.setImage(selectedImage, for: .normal)
-            button.imageView?.contentMode = .scaleAspectFill
-            tappedGridButton = nil // reset tappedGridButton
-        }
-        picker.dismiss(animated: true)
-    }
 }

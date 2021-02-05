@@ -213,10 +213,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="i2f-Zn-FeP"/>
                                 <exclude reference="OSB-Nb-Yrb"/>
                                 <exclude reference="2DT-bU-ggt"/>
                                 <exclude reference="zu9-Mg-hee"/>
+                                <exclude reference="i2f-Zn-FeP"/>
                                 <exclude reference="7zb-mC-X8A"/>
                                 <exclude reference="Xhx-1T-hLe"/>
                             </mask>
@@ -228,14 +228,14 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Itw-No-BXC"/>
-                                <include reference="i2f-Zn-FeP"/>
-                                <exclude reference="pH9-vC-3Mo"/>
                                 <include reference="OSB-Nb-Yrb"/>
                                 <exclude reference="Szs-Kf-Fse"/>
                                 <include reference="2DT-bU-ggt"/>
                                 <exclude reference="OfJ-cH-jbC"/>
                                 <exclude reference="PQv-kI-foT"/>
                                 <include reference="zu9-Mg-hee"/>
+                                <include reference="i2f-Zn-FeP"/>
+                                <exclude reference="pH9-vC-3Mo"/>
                                 <exclude reference="5tb-Qj-Pyk"/>
                                 <include reference="7zb-mC-X8A"/>
                                 <exclude reference="TIh-Pl-Z21"/>
@@ -245,9 +245,9 @@
                     </view>
                     <connections>
                         <outlet property="gridView" destination="OPJ-mj-Fau" id="jju-Mr-0Uc"/>
-                        <outletCollection property="changeLayoutButtons" destination="htL-JI-rO2" collectionClass="NSMutableArray" id="Bfq-sD-7uS"/>
-                        <outletCollection property="changeLayoutButtons" destination="y0y-km-LcV" collectionClass="NSMutableArray" id="zdh-Zj-ah6"/>
-                        <outletCollection property="changeLayoutButtons" destination="wIa-M7-qJO" collectionClass="NSMutableArray" id="0fm-Zs-VLO"/>
+                        <outletCollection property="layoutButtons" destination="htL-JI-rO2" collectionClass="NSMutableArray" id="Bfq-sD-7uS"/>
+                        <outletCollection property="layoutButtons" destination="y0y-km-LcV" collectionClass="NSMutableArray" id="zdh-Zj-ah6"/>
+                        <outletCollection property="layoutButtons" destination="wIa-M7-qJO" collectionClass="NSMutableArray" id="0fm-Zs-VLO"/>
                         <outletCollection property="gridButtons" destination="n5e-tx-sFt" collectionClass="NSMutableArray" id="Pdh-IO-YJv"/>
                         <outletCollection property="gridButtons" destination="SzD-5I-sPs" collectionClass="NSMutableArray" id="u6t-l4-hAc"/>
                         <outletCollection property="gridButtons" destination="TnI-af-bfV" collectionClass="NSMutableArray" id="Rup-XL-I1r"/>
